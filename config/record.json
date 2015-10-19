@@ -1,0 +1,8 @@
+{
+  "development" : {
+    "recordPath" : "../lxt"
+  },
+  "production" : {
+    "recordPath" : "../lxt"
+  }
+}
