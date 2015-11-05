@@ -1,17 +1,19 @@
-module.exports = function(app){
-  return new Filter(app);  
+module.exports = function(){
+  return new Filter();  
 };
 
-var Filter = function(app) {
-  this.app = app;
+var Filter = function() {
 };
 
 var fs = require('fs');
 
 Filter.prototype.before = function(msg, session, next) {
   if (msg.content) {
-    var msgObj = JSON.parse(msg.content);
-    var recordPath = this.app.get('record').recordPath + '/' + msg.rid;
+    try{
+	var msgObj = JSON.parse(msg.content);
+    }catch(e){}
+    var recordPath = '/home/fangtian/record';
+    recordPath += '/' + msg.rid;
     if (!fs.exists(recordPath)) {
       fs.mkdir(recordPath, 0777, function(err) {
         

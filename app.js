@@ -14,10 +14,10 @@ app.configure('production|development', function() {
 	// route configures
 	app.route('chat', routeUtil.chat);
 	// load record.json
-	app.loadConfig('record', app.getBase() + '/config/record.json');
+	// app.loadConfig('record', app.getBase() + '/config/record.json');
 	// filter configures
 	app.filter(pomelo.timeout());
-	app.filter(recordFilter(app));
+	app.filter(recordFilter());
     app.set('connectorConfig', {
         connector : pomelo.connectors.hybridconnector,
         heartbeat : 30,
