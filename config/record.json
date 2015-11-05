@@ -1,8 +1,8 @@
 {
   "development" : {
-    "recordPath" : "../lxt"
+    "recordPath" : "/home/fangtian/record"
   },
   "production" : {
-    "recordPath" : "../lxt"
+    "recordPath" : "/home/fangtian/record"
   }
 }
